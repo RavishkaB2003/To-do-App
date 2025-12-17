@@ -1,17 +1,19 @@
+// ignore_for_file: sized_box_for_whitespace
+
 import 'package:flutter/material.dart';
 import 'package:todo_app/util/mybutton.dart';
 
 class Alertbox extends StatelessWidget {
-  final controller;
-  VoidCallback Add;
-  VoidCallback Cancel;
-  Alertbox({super.key, required this.controller, required this.Add, required this.Cancel});
+  final dynamic controller;
+  final VoidCallback Add;
+  final VoidCallback Cancel;
+  const Alertbox({super.key, required this.controller, required this.Add, required this.Cancel});
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      backgroundColor: Colors.yellow[400],
+      backgroundColor: Colors.grey[600],
       content: Container(
         height: 120,
         child: Column(
@@ -29,9 +31,11 @@ class Alertbox extends StatelessWidget {
               spacing: 10,
               //buttons section
               children: [
-                Button(text: 'Add', onPressed: Add),
+                Button(text: 'Add', 
+                onPressed: Add),
 
-                Button(text: 'Cancel', onPressed: Cancel),
+                Button(text: 'Cancel', 
+                onPressed: Cancel),
               ],
             ),
           ],

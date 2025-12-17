@@ -32,14 +32,15 @@ class TodoContainer extends StatelessWidget {
             onPressed: deletefunction,
             backgroundColor: Colors.red,
             icon: Icons.delete,
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.horizontal(right: Radius.circular(20),
+            )
             )
             ],
         ),
         child: Container(
           padding: const EdgeInsets.all(24),
           decoration: BoxDecoration(
-            color: Colors.yellow[600],
+            color: Colors.grey[600],
             borderRadius: BorderRadius.circular(12),
           ),
           child: Row(
@@ -48,7 +49,7 @@ class TodoContainer extends StatelessWidget {
               Checkbox(
                 value: taskdone,
                 onChanged: onChanged,
-                activeColor: Colors.black,
+                activeColor: Colors.yellow[800],
               ),
         
               //text section
@@ -56,9 +57,11 @@ class TodoContainer extends StatelessWidget {
                 taskname,
                 style: GoogleFonts.montserrat(
                   fontSize: 18,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.black,
-                  decoration: 
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white,
+                  decorationColor: Colors.red[700],
+                  decorationThickness: 2,
+                  decoration:
                   taskdone ? TextDecoration.lineThrough : TextDecoration.none,
                 ),
               ),

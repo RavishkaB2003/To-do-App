@@ -9,6 +9,7 @@ void main() async{
 
 
   //open a box
+  // ignore: unused_local_variable
   var box = await Hive.openBox('todo_box');
 
   
@@ -26,8 +27,8 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellow),
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.yellow[400],
-          foregroundColor: Colors.black,
+          backgroundColor: Colors.black,
+          foregroundColor: Colors.white,
         ),
         useMaterial3: false,
       ),
