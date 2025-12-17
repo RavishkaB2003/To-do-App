@@ -65,8 +65,8 @@ class _TodoappState extends State<Todoapp> {
       builder: (context) {
         return Alertbox(
           controller: controller,
-          Add: addmethod,
-          Cancel: Navigator.of(context).pop,
+          add: addmethod,
+          cancel: Navigator.of(context).pop,
         );
       },
     );
@@ -91,7 +91,7 @@ class _TodoappState extends State<Todoapp> {
           style: GoogleFonts.montserrat(
             fontSize: 24,
             fontWeight: FontWeight.w900,
-            color: Colors.white,
+            color: Colors.yellow[800],
           ),
         ),
       ),

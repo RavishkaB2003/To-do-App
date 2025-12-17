@@ -5,9 +5,9 @@ import 'package:todo_app/util/mybutton.dart';
 
 class Alertbox extends StatelessWidget {
   final dynamic controller;
-  final VoidCallback Add;
-  final VoidCallback Cancel;
-  const Alertbox({super.key, required this.controller, required this.Add, required this.Cancel});
+  final VoidCallback add;
+  final VoidCallback cancel;
+  const Alertbox({super.key, required this.controller, required this.add, required this.cancel});
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +20,7 @@ class Alertbox extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             TextField(
+              style: TextStyle(color: Colors.white),
               controller: controller,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
@@ -32,10 +33,11 @@ class Alertbox extends StatelessWidget {
               //buttons section
               children: [
                 Button(text: 'Add', 
-                onPressed: Add),
+                onPressed: add,
+              ),
 
                 Button(text: 'Cancel', 
-                onPressed: Cancel),
+                onPressed: cancel),
               ],
             ),
           ],
