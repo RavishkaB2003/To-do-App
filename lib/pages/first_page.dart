@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive/hive.dart';
+import 'package:provider/provider.dart';
 import 'package:todo_app/data/database.dart';
+import 'package:todo_app/themes/theme_provide.dart';
 import 'package:todo_app/util/alertbox.dart';
 import 'package:todo_app/util/todo_container.dart';
 
@@ -72,10 +74,11 @@ class _TodoappState extends State<Todoapp> {
     );
   }
 
-  //showdialog function for floating button
+  
 
   @override
   Widget build(BuildContext context) {
+    bool islightmode = Theme.of(context).brightness == Brightness.light; //bool to check light or dark mode
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       floatingActionButton: FloatingActionButton(
@@ -93,6 +96,16 @@ class _TodoappState extends State<Todoapp> {
             fontSize: 24,
             fontWeight: FontWeight.w800,
             color: Theme.of(context).colorScheme.primary,
+          ),
+        ),
+        leading: GestureDetector(
+          onTap: () {
+            Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
+          },
+          child: Icon(
+            islightmode ? Icons.light_mode : Icons.dark_mode, //change icon based on theme
+            color: Theme.of(context).colorScheme.primary,
+          
           ),
         ),
       ),
