@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:todo_app/pages/first_page.dart';
+import 'package:todo_app/themes/theme.dart';
 
 void main() async{
 
@@ -24,14 +25,8 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Todoapp(),
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellow),
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.black,
-          foregroundColor: Colors.white,
-        ),
-        useMaterial3: false,
-      ),
+      theme: lightmode,
+      darkTheme: darkmode,
     );
   }
 }

@@ -27,20 +27,20 @@ class TodoContainer extends StatelessWidget {
       ),
       child: Slidable(
         endActionPane: ActionPane(
-          motion:StretchMotion(), 
-          children: [SlidableAction(
-            onPressed: deletefunction,
-            backgroundColor: Colors.red,
-            icon: Icons.delete,
-            borderRadius: BorderRadius.horizontal(right: Radius.circular(20),
-            )
-            )
-            ],
+          motion: StretchMotion(),
+          children: [
+            SlidableAction(
+              onPressed: deletefunction,
+              backgroundColor: Colors.red,
+              icon: Icons.delete,
+              borderRadius: BorderRadius.horizontal(right: Radius.circular(20)),
+            ),
+          ],
         ),
         child: Container(
           padding: const EdgeInsets.all(24),
           decoration: BoxDecoration(
-            color: Colors.grey[600],
+            color:Theme.of( context).colorScheme.surface,
             borderRadius: BorderRadius.circular(12),
           ),
           child: Row(
@@ -49,20 +49,21 @@ class TodoContainer extends StatelessWidget {
               Checkbox(
                 value: taskdone,
                 onChanged: onChanged,
-                activeColor: Colors.yellow[800],
+                activeColor: Theme.of( context).colorScheme.primary,
               ),
-        
+
               //text section
               Text(
                 taskname,
                 style: GoogleFonts.montserrat(
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
-                  color: Colors.white,
+                  color: Theme.of(context).colorScheme.primary,
                   decorationColor: Colors.red[700],
                   decorationThickness: 2,
-                  decoration:
-                  taskdone ? TextDecoration.lineThrough : TextDecoration.none,
+                  decoration: taskdone
+                      ? TextDecoration.lineThrough
+                      : TextDecoration.none,
                 ),
               ),
             ],

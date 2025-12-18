@@ -13,14 +13,15 @@ class Alertbox extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      backgroundColor: Colors.grey[600],
+      backgroundColor: Theme.of(context).colorScheme.surface,
       content: Container(
         height: 120,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             TextField(
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(
+                color: Theme.of(context).textTheme.titleMedium?.color),
               controller: controller,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),

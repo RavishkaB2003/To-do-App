@@ -77,11 +77,12 @@ class _TodoappState extends State<Todoapp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       floatingActionButton: FloatingActionButton(
         onPressed: createNewTask,
-        backgroundColor: Colors.yellow[800],
-        child: const Icon(Icons.add, color: Colors.white),
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        child: Icon(Icons.add, 
+        color: Theme.of(context).colorScheme.onSurface),
       ),
       appBar: AppBar(
         centerTitle: true,
@@ -90,8 +91,8 @@ class _TodoappState extends State<Todoapp> {
           "T O D O  A P P",
           style: GoogleFonts.montserrat(
             fontSize: 24,
-            fontWeight: FontWeight.w900,
-            color: Colors.yellow[800],
+            fontWeight: FontWeight.w800,
+            color: Theme.of(context).colorScheme.primary,
           ),
         ),
       ),

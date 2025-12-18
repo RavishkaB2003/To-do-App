@@ -16,11 +16,11 @@ class Button extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(8),
       ),
-      color: Colors.yellow[800],
+      color: Theme.of(  context).colorScheme.primary,
       onPressed: onPressed,
       child: Text(text,
       style: TextStyle(
-        color: Colors.white,
+        color: Theme.of(context).colorScheme.onSurface,
       ),),
       );
   }
